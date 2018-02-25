@@ -13,7 +13,7 @@ class QuoteController {
     def random() {
         def staticAuthor = "Anonymous"
         def staticQuote = "Real programmers bla bla bla"
-        [author: staticAuthor, quote: staticQuote]
+        [author: staticAuthor, content: staticQuote]
 
     }
 }
