@@ -11,9 +11,16 @@ class QuoteController {
     }
 
     def random() {
-        def staticAuthor = "Anonymous"
-        def staticQuote = "Real programmers bla bla bla"
-        [author: staticAuthor, content: staticQuote]
 
+        def allQuotes = Quote.list()
+        def randomQuote
+
+        if (allQuotes.size() > 0) {
+            def randomIdx = new Random().nextInt(allQuotes.size())
+            randomQuote = new Quote(author: "Anonymous",
+            content: "Real Programmers Don’t eat Quiche")
+        }
+
+        [quote: randomQuote]
     }
 }
